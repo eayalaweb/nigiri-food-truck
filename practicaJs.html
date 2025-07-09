@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .boton{
+            width: fit-content;
+            padding: 0.5rem 2rem;
+            color: black;
+            background-color: red;
+            font-family: Arial;
+            font-weight: 500px;
+            letter-spacing: 2px;
+            border: 2px solid black;
+            transition: 0.3s;
+            &:hover{
+                background-color: black;
+                color: red;
+                border: 2px solid red;
+            }
+            &:active{
+                transform: scale(0.9);
+                
+            }
+            
+        }
+        .boton2{
+            width: fit-content;
+            padding: 0.5rem 2rem;
+            color: rgb(44, 184, 219);
+            background-color: rgb(206, 105, 206);
+            font-family: Arial;
+            font-weight: 500px;
+            letter-spacing: 2px;
+            border: 2px solid rgb(206, 105, 206);
+            transition: 0.3s;
+            &:hover{
+                background-color: rgb(44, 184, 219);
+                color: rgb(206, 105, 206);
+                border: 2px solid rgb(44, 184, 219);
+            }
+            &:active{
+                transform: scale(0.9);
+                
+            }
+        }
+
+        .boton3{
+            width: fit-content;
+            padding: 0.5rem 2rem;
+            color: rgb(219, 85, 44);
+            background-color: rgb(17, 143, 132);
+            font-family: Arial;
+            font-weight: 500px;
+            letter-spacing: 2px;
+            border: 2px solid rgb(17, 143, 132);
+            transition: 0.3s;
+            &:hover{
+                background-color:  rgb(219, 85, 44);
+                color: rgb(17, 143, 132);
+                border: 2px solid  rgb(219, 85, 44);
+                }
+            &:active{
+                transform: scale(0.9);
+                
+            }
+        }
+
+        
+
+        .destacar{
+             width: fit-content;
+            border-bottom: 5px dotted  black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="mih1">hola mundo</h1> <!-- no pueden haber 2 id iguales ID=Unico -->
+
+    <p id="presentacion">texto inicial</p>
+
+    <ul>
+        <li id="nombre"></li>
+        <li id="apellido"></li>
+        <li id="nombreCompleto"></li>
+    </ul>
+ 
+     <div class="boton" id="boton01"> Quiero cambiar el h1</div>
+   <div class="boton2" id="boton02"> quiero que vuelva al de antes</div>
+   <div class="boton3" id="boton03"> cambio color del h1</div>
+    <div class="boton " id="boton04"> Añadir o quitar clase</div>
+
+<!-- EJERCICIO 4  -->
+    <label for="item01"> Sushi 1</label>
+    <input type="checkbox" name="" id="item01" data-nombre="producto-01">
+
+    <label for="item02"> Sushi 2</label>
+    <input type="checkbox" name="" id="item02" data-nombre="producto-02">
+    
+<table>
+    <tr>
+        <th>Producto</th>
+    </tr>
+
+    <tr>
+        <td id="registro01"></td>
+    </tr>
+
+    <tr>
+        <td id="registro02"></td>
+    </tr>
+</table>
+
+<!-- EJERCICIO 5 CAMBIO DE CHECKBOX CON CLASS E INTERADOR  -->
+
+<label for="product1"> PRODUCTO 1</label>
+    <input type="checkbox" name="" id="product1" data-nombre="nigiri salmon" class="item">
+
+    <label for="product2"> PRODUCTO 2</label>
+    <input type="checkbox" name="" id="product2" data-nombre="nigiri atun" class="item">
+    
+<table>
+    <tr>
+        <th>Producto</th>
+    </tr>
+</table>
+
+
+<script>
+// aqui ya programo en js y es necesario que el resto de html ya este cargado or eso pongo este script al final del body 
+
+
+//****Cambiar el texto del h1****
+const mih1 = document.getElementById('mih1');
+const presentacion = document.getElementById('presentacion');
+
+// console.log(mih1) >> es un elemento html
+mih1.innerHTML = 'hola mundo'; // puedo meter etiquetas html
+presentacion.innerText = 'aqui meto texto con innerText'; // puedo meter texto
+
+
+// CONCATENAR CON VARIABLES 
+const nombre = document.getElementById('nombre');
+const apellido = document.getElementById('apellido');
+const nombreCompleto = document.getElementById('nombreCompleto');
+
+// aqui
+let nom = 'emma'
+let ape = 'ayala'
+
+
+nombre.innerText = nom;
+apellido.innerText = ape;
+
+nombreCompleto.innerText = nom + ' ' + ape
+
+nombreCompleto.innerHTML = `mellamoooo ${nom} y soyyy ${ape} adiossss`;
+
+// EJERCICIO 3 - USO DE EVENTOS DE ESCUCHA DESDE JS
+
+// recojo en constante el elemento boton 
+const boton01 = document.getElementById('boton01')
+const boton02 = document.getElementById('boton02')
+const boton03 = document.getElementById('boton03')
+const boton04 = document.querySelector('#boton04') // para identificar el id con query con #
+const valorInicialdelH1 = mih1.innerText
+    // esperando a que haga clic
+    // con un click se ejecuta la funcion del listener
+boton01.addEventListener('click', function(){
+    mih1.innerText='he cambiado el h1 a traves del boton'
+})
+
+boton02.addEventListener('click', function(){
+     mih1.innerText = valorInicialdelH1 
+    //  escalabilidad, si cambiamos en el html cambiamos el valor 
+})
+
+boton03.addEventListener('click', function(){
+     mih1.style.color= "red";
+
+})
+
+boton04.addEventListener('click', function(){
+     mih1.classList.toggle("destacar")
+//  añadir o quitar una clase con el classList.toggle 
+})
+
+// EJERCICIO 4 checkboz en tabla
+
+const item01 = document.getElementById('item01')
+const item02 = document.getElementById('item02')
+const registro01 = document.getElementById("registro01")
+const registro02 = document.getElementById("registro02")
+
+item01.addEventListener('change', function(){
+    if(item01.checked){
+        registro01.innerText=item01.getAttribute("data-nombre")
+       }else{
+         registro01.innerText=""
+       }
+})
+
+item02.addEventListener('change', function(){
+    if(item02.checked){
+        registro02.innerText=item02.getAttribute("data-nombre")
+       }else{
+         registro02.innerText=""
+       }
+})
+
+// EJERCICIO 5 checkboz en tabla
+
+const product1 = document.getElementById('product1')
+const product2 = document.getElementById('product2')
+const items = document.getElementsByClassName("item")
+
+for(const item of items){
+    item.addEventListener("change", function(){
+        console.log(item)
+    })
+}
+
+
+
+</script>
+
+
+</body>
+</html>
+
+
