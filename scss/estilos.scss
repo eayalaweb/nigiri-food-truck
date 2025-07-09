@@ -2,18 +2,18 @@
 
 
 /* -------CAVIAR  DREAMS-----------*/
+
+
 @font-face {
-    font-family: 'Japannese2020';
+    font-family: 'japanese_2020regular';
     src: url('https://alm-area.com/co25/tipo/japanese_2020-webfont.eot');
     src: url('https://alm-area.com/co25/tipo/japanese_2020-webfont.eot?#iefix') format('embedded-opentype'),
          url('https://alm-area.com/co25/tipo/japanese_2020-webfont.woff2') format('woff2'),
          url('https://alm-area.com/co25/tipo/japanese_2020-webfont.woff') format('woff'),
          url('https://alm-area.com/co25/tipo/japanese_2020-webfont.ttf') format('truetype'),
-         url('https://alm-area.com/co25/tipo/japanese_2020-webfont.svg#caviar_dreamsregular') format('svg');
+         url('https://alm-area.com/co25/tipo/japanese_2020-webfont.svg#japanese_2020regular') format('svg');
     font-weight: normal;
-    font-style: normal;
-
-}
+    font-style: normal;}
 
 // para anualr el paddig de container-fluid
 $container-padding-x: 0;
@@ -102,6 +102,7 @@ $tipotxt:'Lato';
 }
 
 // TIPOGRAFIAS
+
 .encabezado-h1{
    font-family: "Anton", sans-serif;
    font-size: 6em;
@@ -150,14 +151,82 @@ table, th, td {
 }
 
 
+// ESTILOS PARA EL JS
+        .boton{
+            width: fit-content;
+            padding: 0.5rem 2rem;
+            color: rgb(255, 217, 0);
+            background-color: rgb(0, 153, 255);
+            font-family: Arial;
+            font-weight: 500px;
+            letter-spacing: 2px;
+            border: 2px solid rgb(255, 217, 0);
+            transition: 0.3s;
+            cursor: pointer;
+            &:hover{
+                background-color: rgb(255, 217, 0);
+                color:rgb(0, 153, 255);
+                border: 2px solid rgb(0, 153, 255);
+            }
+            &:active{
+                transform: scale(0.9);
+                
+            }
+            
+        }
 
+        .dflex{
+            display: flex;
+            
+        }
+
+        table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+        }
+
+        #modal{
+            position: fixed;
+            inset: 0;
+
+            width: 100%;
+            min-width: 100dvh;
+            background-color: black;
+            backdrop-filter: blur (10px);
+
+            display: none; /* esto cambiaremos desde JS  */
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .resume{
+            background-color: rgb(95, 95, 95);
+            color: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            row-gap: 2rem;
+        }
+        #cerrar{
+             cursor: pointer;
+             background-color: rgb(0, 153, 255);
+             padding: 1rem;
+             &:hover{
+                background-color: rgb(255, 217, 0);
+                
+            }
+        }
 
 
 @media (max-width: 768px) {
 
   // TIPOGRAFIAS
 .encabezado-h1{
-   font-size: 20px;
+   font-size: 5em;
 }
 
 
