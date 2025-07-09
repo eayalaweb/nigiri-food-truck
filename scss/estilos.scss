@@ -19,6 +19,25 @@
 $container-padding-x: 0;
 $container-padding-y: 0;
 
+/* NAVBAR*/
+/* Estilo original */
+.navbar {
+  transition: all 1.5s ease;
+  padding: 20px 0;
+  // background-color: rgba(253, 246, 237, 1);
+}
+
+/* Estilo al hacer scroll */
+.navbar.scrolled {
+  // background-color: white !important;
+  padding: 10px 0;
+  box-shadow: 0 2px 10px rgba(145, 0, 0, 0.1);
+}
+
+.navbar.scrolled .nav-link,
+.navbar.scrolled .navbar-brand {
+  color: black !important;  
+}
 
 //Mis colores
 $rosa: #F4CBE2;
@@ -28,6 +47,7 @@ $amarillo: #FEC906;
 $micolor: rgba(221, 209, 195, 1);
 $color-tema:rgba(253, 246, 237, 1);
 $azul: rgb(100, 100, 184);
+$gris : rgba(43, 43, 43, 1);
 
 //mapa de colore añadidos //mapa de colore añadidos es necesario para que salgan en las var de bootstrap
 $custom-colors: (
@@ -35,6 +55,7 @@ $custom-colors: (
   "color-tema": $color-tema,
   "miverde": $miverde,
   "amarillo": $amarillo,
+  "gris": $gris,
   "rosa": $rosa
 );
 
@@ -43,7 +64,8 @@ $theme-colors: map-merge(
   $custom-colors,
   (
     "miverde": $miverde,
-    "micolor": $micolor
+    "micolor": $micolor,
+    "gris": $gris,
     // puedes incluir más si quieres
   )
 );
@@ -59,7 +81,7 @@ $tipotxt:'Lato';
   margin-bottom: 20px;
   padding: 50px;
   border-radius: 3rem;
-  border: 2px solid #2B2B2B;
+  
 }
 
 @mixin caja2 {
@@ -67,7 +89,7 @@ $tipotxt:'Lato';
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 3rem;
-  border: 2px solid #2B2B2B;
+ 
 }
 
 .micontainer {
@@ -80,6 +102,12 @@ $tipotxt:'Lato';
   width: 90%; 
   margin: auto;
   @include caja2();
+}
+
+.indexform{
+  width: 40%; 
+  margin: auto;
+  
 }
 
 .container-w90{
@@ -101,6 +129,13 @@ $tipotxt:'Lato';
   max-width: 1920px;
 }
 
+// SLIDERS
+.img-slider{
+  background-size: cover;
+    background-attachment: fixed;
+    max-width: 1920px;
+    height: 50vh;
+}
 // TIPOGRAFIAS
 
 .encabezado-h1{
@@ -115,6 +150,12 @@ $tipotxt:'Lato';
   font-family: "Anton", sans-serif;
    font-size: 13vw;
 }
+.footer-h5{
+  font-family: "Anton", sans-serif;
+   font-size: 6em;
+   color:#EF5B30;
+}
+
 .precio{
   font-family: "DM Sans", sans-serif;
   font-weight: 800;
@@ -136,11 +177,20 @@ $tipotxt:'Lato';
 }
 
 .btn-body{
+  width: fit-content;
+  padding: 0.5rem 2rem;
   border-radius: 1rem;
   border: none;
   padding: 20px;
   font-size: 15px;
   
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover{
+                background-color: $naranja;
+                color:white;
+                
+            }
 }
 
 // TABLA

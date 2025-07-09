@@ -12,26 +12,43 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
   </head>
   <body class="bg-color-tema">
-  <!-------------NAVBAR----------------->
-  <nav class="navbar fixed-top navbar-expand-lg" data-bs-theme="light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<!-------------NAVBAR----------------->
+        <nav class="navbar fixed-top navbar-expand-lg bg-color-tema" data-bs-theme="bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="img/logoo.svg" width="50%"></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <!----mx-auto va al medio / me va a la izk / ms al final--->
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">SOBRE NOSOTROS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contacto.html">Contacto</a>
+          <a class="nav-link" href="#">PERSONALIZAR</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="#">ENCUENTRANOS</a>
         </li>
-        
+        <li class="nav-item">
+          <a class="nav-link" href="#">CONTACTO</a>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            FLORES
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">TIENDA</a></li>
+            <li><a class="dropdown-item" href="#">FLORES</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li> -->
+
       </ul>
+
     </div>
   </div>
 </nav>
@@ -83,56 +100,76 @@
 <section class="container pt-5 g-0">
     <div class="row">
         <div class="col-md-5">
-            <h4>Contacto</h4>
-            <p>¿Querés hacer un pedido, tenés alguna consulta o simplemente te gustaría saber dónde estaremos?
-Estamos para ayudarte.</p>
-           <hr>
-           <p>📍Ubicación variable: consulta nuestra página para saber dónde estamos hoy</p>
-           <button type="button" class="btn-body bg-amarillo">ENCUENTRANOS</button>
+              <h4>Contacto</h4>
+              <p>¿Querés hacer un pedido, tenés alguna consulta o simplemente te gustaría saber dónde estaremos?
+              Estamos para ayudarte.</p>
+              <hr>
+              <p>📍Ubicación variable: consulta nuestra página para saber dónde estamos hoy</p>
+              <button type="button" class="btn-body bg-amarillo mb-5">ENCUENTRANOS</button>
 
         </div>
 
         <div class="micontainer col-md-7 bg-micolor">
-          <div class="row">
-            <div class="col-md-6">
+             <form>
+                    <div class="row">
+                      <!-- Nombre -->
+                      <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                          <label for="exampleInputnombre" class="form-label">Nombre</label>
+                          <input type="text" class="form-control" id="exampleInputnombre" aria-describedby="nombre">
+                        </div>
+                      </div>
 
-            <form>
-     <div class="mb-3">
-    <label for="exampleInputnombre" class="form-label">Nombre</label>
-    <input type="nombre" class="form-control" id="exampleInputnombre" aria-describedby="nombre">
-  </div>
+                      <!-- Apellido -->
+                      <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                          <label for="exampleInputapellido" class="form-label">Apellido</label>
+                          <input type="text" class="form-control" id="exampleInputapellido" aria-describedby="apellido">
+                        </div>
+                      </div>
 
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Gmail</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
-        </div>
+                      <!-- Gmail -->
+                      <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Gmail</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                      </div>
 
-      <div class="col-md-6">
-        <div class="mb-3">
-  <label for="exampleInputapellido" class="form-label">Apellido</label>
-    <input type="apellido" class="form-control" id="exampleInputapellido" aria-describedby="apellido"></div>
+                      <!-- Número -->
+                      <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                          <label for="exampleInputnumero" class="form-label">Número</label>
+                          <input type="text" class="form-control" id="exampleInputnumero" aria-describedby="numero">
+                        </div>
+                      </div>
 
-     <div class="mb-3">
-   <label for="exampleInputnumero" class="form-label">Número</label>
-    <input type="numero" class="form-control" id="exampleInputnumero" aria-describedby="numero"></div>
-  </div>
+                      <!-- Mensaje -->
+                      <div class="col-12">
+                        <div class="mb-3">
+                          <label for="exampleInputMensaje" class="form-label">Mensaje</label>
+                          <input type="text" class="form-control" id="exampleInputMensaje">
+                        </div>
+                      </div>
 
-  <div class="mb-3">
-    <label for="exampleInputMensaje" class="form-label">Mensaje</label>
-    <input type="mensaje" class="form-control" id="exampleInputMensaje">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-danger">Submit</button>
-</form>
-                </div>
-            </div>
-        </div>
+                      <!-- Checkbox -->
+                      <div class="col-12">
+                        <div class="mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                      </div>
 
-    </div>
+                      <!-- Botón -->
+                      <div class="col-12">
+                        <button type="submit" class="btn-body bg-rosa ">ENVIAR</button>
+                      </div>
+                    </div>
+               </form>
+
+       </div>
+ </div>
+
 
 </section>
 
