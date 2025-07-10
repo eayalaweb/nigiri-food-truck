@@ -40,6 +40,7 @@ $container-padding-y: 0;
 }
 
 //Mis colores
+$rojo: #ED3939;
 $rosa: #F4CBE2;
 $naranja:#EF5B30;
 $miverde:#DAE4B6;
@@ -51,6 +52,7 @@ $gris : rgba(43, 43, 43, 1);
 
 //mapa de colore añadidos //mapa de colore añadidos es necesario para que salgan en las var de bootstrap
 $custom-colors: (
+  "rojo": $rojo,
   "micolor": $micolor,
   "color-tema": $color-tema,
   "miverde": $miverde,
@@ -66,6 +68,7 @@ $theme-colors: map-merge(
     "miverde": $miverde,
     "micolor": $micolor,
     "gris": $gris,
+    "rojo": $rojo
     // puedes incluir más si quieres
   )
 );
@@ -101,6 +104,7 @@ $tipotxt:'Lato';
 .micard{
   width: 90%; 
   margin: auto;
+  background-color: white;
   @include caja2();
 }
 
@@ -153,7 +157,12 @@ $tipotxt:'Lato';
 .footer-h5{
   font-family: "Anton", sans-serif;
    font-size: 6em;
-   color:#EF5B30;
+}
+
+.info-footer{
+  font-family: "Anton", sans-serif;
+  // font-weight: 800;
+  font-size: 2rem;
 }
 
 .precio{
@@ -198,25 +207,44 @@ table, th, td {
   border: 2px solid black;
   border-collapse: collapse;
   padding: 10px;
+  margin:auto;
+  padding: 10px;
+  row-gap: 50px;
 }
 
+.titulo-tabla{
+  background-color: $naranja;
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.tabla-body{
+  width: 100%;
+  margin: auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: $micolor;
+}
 
 // ESTILOS PARA EL JS
         .boton{
+            font-family: "DM Sans", sans-serif;
             width: fit-content;
             padding: 0.5rem 2rem;
-            color: rgb(255, 217, 0);
-            background-color: rgb(0, 153, 255);
+            color: white;
+            background-color: $amarillo;
             font-family: Arial;
             font-weight: 500px;
-            letter-spacing: 2px;
-            border: 2px solid rgb(255, 217, 0);
+            border: 2px solid $naranja;
+            border-radius: 5rem;
             transition: 0.3s;
             cursor: pointer;
             &:hover{
-                background-color: rgb(255, 217, 0);
-                color:rgb(0, 153, 255);
-                border: 2px solid rgb(0, 153, 255);
+                background-color: $naranja;
+                color:$amarillo;
+                border: 2px solid $naranja;
             }
             &:active{
                 transform: scale(0.9);

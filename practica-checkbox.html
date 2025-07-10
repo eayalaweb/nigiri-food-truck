@@ -153,6 +153,27 @@ const productos = document.getElementsByClassName("producto")
 const tableItems = document.getElementById("tableItems")
 const total = document.getElementById("total") //Span donde totalizo la compra
 
+// Contar filas de cada TD
+function contarFilas(){
+        // Recojo todas las filas sólo cuando llamo a esta función
+        const filas = document.querySelectorAll(".fila")
+        let contador = 0
+
+        //Hago una iteración mediante foreach
+        filas.forEach(fila => {
+
+            const tds = fila.querySelectorAll('td')
+            let primerTd = tds[0]
+
+            console.log(primerTd)
+            if(primerTd){
+                contador = contador + 1
+                console.log(contador)
+                primerTd.innerText=contador
+            }
+        }); 
+    }
+
 
 // recorrer en un FOR OF todos los product, en cada interación trabajare con cada uno 
 for(const producto of productos){
@@ -198,6 +219,7 @@ for(const producto of productos){
             // asigno valores
             // EM: Aqui a cada TD le asignamos un constante que hace el evento mediante la data
             tr.setAttribute("id", id)
+             tr.setAttribute("class", "fila")
             td1.innerText = "#"
             td2.innerText = nombre
             td3.innerText = precio + "€"
@@ -227,6 +249,8 @@ for(const producto of productos){
             total.setAttribute("data-total", totalCompraNuevo)
             total.innerText = totalCompraNuevo + "€"
         }
+
+        contarFilas() // Llamo a la función que cuenta las filas y actualiza el primer TD de cada fila
 
     })
 
