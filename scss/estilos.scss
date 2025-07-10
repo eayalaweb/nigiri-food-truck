@@ -58,6 +58,7 @@ $custom-colors: (
   "miverde": $miverde,
   "amarillo": $amarillo,
   "gris": $gris,
+  "naranja": $naranja,
   "rosa": $rosa
 );
 
@@ -96,8 +97,9 @@ $tipotxt:'Lato';
 }
 
 .micontainer {
-  width: 90%; 
+  width: 80%; 
   margin: auto;
+  background-color: rgba(0, 0, 0, 0.50);
   @include caja();
 }
 
@@ -114,10 +116,23 @@ $tipotxt:'Lato';
   
 }
 
+.pt-nav{
+  padding-top: 5rem;
+}
+
 .container-w90{
   width: 90%; 
   margin: auto;
 }
+
+
+.product-image {
+  height: 150px;
+  padding: 5px;
+  border: 1px solid black;
+  
+}
+
 
 .img-posici{
       background-attachment: fixed;
@@ -133,12 +148,17 @@ $tipotxt:'Lato';
   max-width: 1920px;
 }
 
+.bg-siider-1{
+  background-image: url(../img/index-porque.png);
+  max-width: 1920px;
+  height: 660px;
+}
 // SLIDERS
 .img-slider{
   background-size: cover;
     background-attachment: fixed;
     max-width: 1920px;
-    height: 50vh;
+   
 }
 // TIPOGRAFIAS
 
@@ -306,8 +326,12 @@ table, th, td {
 .encabezado-h1{
    font-size: 5em;
 }
-
-
+.encabezado-h3 {
+    font-size: 2em;
+}
+.footer-h5 {
+    font-size: 4em;
+}
 
 
 
