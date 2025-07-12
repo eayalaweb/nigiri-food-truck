@@ -16,45 +16,38 @@
   </head>
   <body class="bg-color-tema">
 
-<!-------------NAVBAR----------------->
-        <nav class="navbar fixed-top navbar-expand-lg bg-color-tema" data-bs-theme="bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#"><img src="img/logoo.svg" width="50%"></a>
+  <!-------------NAVBAR----------------->
+<nav class="navbar fixed-top navbar-expand-lg bg-color-tema" data-bs-theme="bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="img/logoo.svg" width="50%"></a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <!----mx-auto va al medio / me va a la izk / ms al final--->
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">SOBRE NOSOTROS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">PERSONALIZAR</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">ENCUENTRANOS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">CONTACTO</a>
-        </li>
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            FLORES
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">TIENDA</a></li>
-            <li><a class="dropdown-item" href="#">FLORES</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <!----mx-auto va al medio / me va a la izk / ms al final--->
+                <li class="nav-item me-3">
+                  <a class="nav-link active"  href="quienes-somos.html">SOBRE NOSOTROS</a>
+                </li>
+                <li class="nav-item me-3">
+                  <a class="nav-link" href="personaliza.html">PERSONALIZAR</a>
+                </li>
+                <li class="nav-item me-3">
+                  <a class="nav-link" href="encuentranos.html">ENCUENTRANOS</a>
+                </li>
+                <li class="nav-item me-3">
+                  <a class="nav-link" href="contacto.html">CONTACTO</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link btn-body bg-naranja" href="pedido.html" aria-current="page">CARTA</a>
+                </li>
+            
           </ul>
-        </li> -->
 
-      </ul>
-
-    </div>
-  </div>
+        </div>
+      </div>
 </nav>
 
 <!-------------HERO----------------->
@@ -385,13 +378,14 @@
 </section>
 
 <!-- RESUMEN DE TU PEDIDO -->
-<section class="container-w90 ">
-      <article class="resumen row" >
-        <div class="col-12 align-items-center justify-content-center">
-                <h3 class="text-center">TU PEDIDO ESTA LISTO</h3>
+<section class="container-fluid bg-rojo pt-5 pb-5">
+      <article class="resumen" >
+        <div class="align-items-center justify-content-center bg-color-tema p-5 m-auto w-50">
+                <h3 class="text-center encabezado-h3">TU PEDIDO ESTÁ LISTO</h3>
                 <table id="tablaPedidos">
                     <thead class="titulo-tabla" >
                         <tr>
+                          
                             <th>Nº</th>
                             <th>Producto</th>
                             <th>Precio/u</th>
@@ -405,7 +399,7 @@
                     </tbody>
                 </table>
 
-                <div id="totalCompra" class="text-center">
+                <div id="totalCompra" class="text-center text-total">
                     <span>TOTAL:</span>
                     <span id="total" data-total="0"></span>
                 </div>
@@ -417,27 +411,55 @@
 
 <!-- ************************************************************ -->
 <!-- CONFIRMA TU PEDIDO - MODAL-->
-<section class="container">
+<section class="container g-0">
 
-<div id="modal">
-    <article class="resume" id="contenedorModal">
-        <span id="cerrar">X</span>
-        <h3>CONFIRMA TU PEDIDO</h3>
-        <!-- aqui ira la tabla clonada de forma dinamica desde JS-->
+    <div id="modal">
+        <article class="resume" id="contenedorModal">
+                  <span id="cerrar">X</span>
+                  <h3 class="encabezado-h3">CONFIRMA TU PEDIDO</h3>
+                  <!-- aqui ira la tabla clonada de forma dinamica desde JS-->
 
-        <div>
-            <!-- <span>TOTAL:</span> -->
-            <span id="totalmodal" data-total="0"></span>
-        </div>
+                  <div>
+                      <!-- <span>TOTAL:</span> -->
+                      <span id="totalmodal" data-total="0"></span>
+                  </div>
 
-        <div class="boton" id="botonConfirmar">HACER EL PEDIDO</div>
-    </article>
-</div>
+            <!-- <div class="boton" id="botonConfirmar">HACER EL PEDIDO</div> -->
+
+              <form>
+                  <div  class="row">
+                          <div class="col-12 col-md-6">
+                                <label for="nom">Nombre</label>
+                                <input type="text" name="nom" id="nom">
+
+                                <label for="tel">Teléfono</label>
+                                <input type="tel" name="tel" id="tel">
+                          </div>
+                          <div class="col-12 col-md-6">
+                                <label for="dir">Dirección</label>
+                                <input type="text" name="dir" id="dir">
+                                
+                                <label for="coment">Comentarios</label>
+                                <textarea name="coment" id="coment"></textarea>
+
+                                <div class="terminos">
+                                    <label for="terminos">Aceptar términos y condiciones de política de privacidad</label>
+                                    <input type="checkbox" name="terminos" id="terminos">                            
+                                </div>
+                                <input type="submit" value="Finalizar y Pagar" class="boton" id="terminos">
+                          </div>  
+                      </div>    
+                  </form>
+                  
+        </article>
+    </div>
+                        
+    
 
 
 
 </section>
-
+<!-- TODO; mejorar el modal -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"> </script>
 
@@ -601,4 +623,54 @@ cerrar.addEventListener("click", function(){
 
  </script>
   </body>
+
+ <!-------------FOOTER----------------->
+<footer class=" bg-micolor pt-5 p-5">
+      <div class="row ">
+          <div class="col-md-6 ">
+                <h5 class="footer-h5 text-rojo ">SABORES JAPONESES SOBRE RUEDAS. SUSHI FRESCO TODOS LOS DÍAS.</h5>
+
+          </div>
+<!-- Contacto -->
+          <div class="col-md-6">
+            <div class="row">
+                  <div class="col-6">
+                      <h5 class="info-footer">CONTACTO</h5>
+                      <div class="d-flex ">
+                        <!-- <i class="fa-regular fa-truck"></i> -->
+                        <img src="img/bus.svg" width="5%" alt="" class="me-3"> 
+                        <p> Donostia - San Sebastián</p>
+
+                      </div>
+
+                      <div class="d-flex ">
+                        <img src="img/call.svg" alt="" width="5%" alt="" class="me-3">
+                        <p> +36  65 84 78 35</p>
+                      </div>
+
+                      <div class="d-flex ">
+                        <img src="img/cloud-upload.svg" alt="" width="5%" alt="" class="me-3">
+                        <p>info @nigirifoodtruck.com</p>
+                      </div>
+
+                  </div>
+
+
+                  <div class="col-6">
+                      <h5 class="info-footer">INFORMACIÓN</h5>
+                      <a href="#" class="footer-link"> Inicio </a> <br> 
+                      <a href="#" class="footer-link"> Sobre nosotros </a> <br>
+                      <a href="#" class="footer-link"> Personalizar </a> <br>
+                      <a href="#" class="footer-link"> Encontrar </a> <br>
+                      <a href="#" class="footer-link"> Contacto </a> <br>
+                      <a href="#" class="footer-link"> Pedidos </a> <br>
+
+
+                  </div>
+              </div>
+          </div>
+      </div>
+    
+</footer>
+
 </html>

@@ -19,11 +19,13 @@
 $container-padding-x: 0;
 $container-padding-y: 0;
 
-/* NAVBAR*/
+/*** NAVBAR******/
 /* Estilo original */
 .navbar {
   transition: all 1.5s ease;
   padding: 20px 0;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
   // background-color: rgba(253, 246, 237, 1);
 }
 
@@ -76,14 +78,14 @@ $theme-colors: map-merge(
 
 //variables tipo
 
-$tipo: 'Playfair Display'; 
-$tipotxt:'Lato';
+$tipo: "Anton", sans-serif; 
+$tipotxt:"DM Sans", sans-serif;
 
 
 @mixin caja {
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: 50px;
+  padding: 30px;
   border-radius: 3rem;
   
 }
@@ -133,7 +135,14 @@ $tipotxt:'Lato';
   
 }
 
+.img-caja{overflow: hidden;}
 
+.img-hover{
+  transition: transform 0.3s ease; 
+  &:hover {
+    transform: scale(1.1);
+  }
+}
 .img-posici{
       background-attachment: fixed;
 }
@@ -141,6 +150,24 @@ $tipotxt:'Lato';
 .border-img{
   border-radius: 1rem;
 }
+
+// GALERIA 
+.gallery-img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item {
+      padding: 5px;
+      overflow: hidden;
+    }
 // HERO
 .hero-pedidos{
   background-image: url(../img/pedido-hero-ordenador.webp);
@@ -149,26 +176,57 @@ $tipotxt:'Lato';
 }
 
 .bg-siider-1{
-  background-image: url(../img/index-porque.png);
+  background-image: url(../img/index-foto-bajo.png);
   max-width: 1920px;
-  height: 660px;
+  background-size: cover;
+  // background-attachment: fixed;
+  // background-position: center;
+  height: 50vh;
 }
 // SLIDERS
 .img-slider{
+  background-image: url(../img/sliter-chica.avif);
   background-size: cover;
-    background-attachment: fixed;
-    max-width: 1920px;
+  background-attachment: fixed;
+  background-position: center;
+  max-width: 1920px;
+  height: 50vh;
+   
+}
+
+.img-slider2{
+  background-image: url(../img/slider-cronograma.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  max-width: 1920px;
+  height: 50vh;
    
 }
 // TIPOGRAFIAS
+
+.titulo-index{
+   font-family: "Anton", sans-serif;
+   font-size: 12em;
+}
 
 .encabezado-h1{
    font-family: "Anton", sans-serif;
    font-size: 6em;
 }
-.encabezado-h3{
+.encabezado-h2{
   font-family: "Anton", sans-serif;
    font-size: 4em;
+}
+
+.encabezado-h3{
+  font-family: "Anton", sans-serif;
+   font-size: 3em;
+}
+
+.encabezado-h4{
+  font-family: "Anton", sans-serif;
+   font-size: 2em;
 }
 .titulo-h1{
   font-family: "Anton", sans-serif;
@@ -183,6 +241,11 @@ $tipotxt:'Lato';
   font-family: "Anton", sans-serif;
   // font-weight: 800;
   font-size: 2rem;
+}
+
+.texto2{
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.5rem;
 }
 
 .precio{
@@ -206,6 +269,29 @@ $tipotxt:'Lato';
 }
 
 .btn-body{
+  background-color: $gris;
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  border-radius: 5rem;
+  border: none;
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  transition: 0.3s;
+  font-size: 1em;
+  cursor: pointer;
+      &:hover{
+                background-color: $micolor;
+                color:$gris;
+                
+            }
+
+      &:active{
+                transform: scale(0.9);
+                
+            }
+}
+
+.btn-body{
   width: fit-content;
   padding: 0.5rem 2rem;
   border-radius: 1rem;
@@ -224,7 +310,7 @@ $tipotxt:'Lato';
 
 // TABLA
 table, th, td {
-  border: 2px solid black;
+  // border: 2px solid black;
   border-collapse: collapse;
   padding: 10px;
   margin:auto;
@@ -233,8 +319,8 @@ table, th, td {
 }
 
 .titulo-tabla{
-  background-color: $naranja;
-  color: white;
+  background-color: $color-tema;
+  color: black;
   font-family: "DM Sans", sans-serif;
   font-weight: 800;
   font-size: 20px;
@@ -247,6 +333,23 @@ table, th, td {
   overflow: hidden;
   background-color: $micolor;
 }
+.text-total{
+   font-family: "DM Sans", sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+}
+// FOOTER
+.footer-link {
+  color: $gris;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: $rojo;
+  text-decoration: underline;
+}
 
 // ESTILOS PARA EL JS
         .boton{
@@ -254,17 +357,17 @@ table, th, td {
             width: fit-content;
             padding: 0.5rem 2rem;
             color: white;
-            background-color: $amarillo;
+            background-color: $rojo;
             font-family: Arial;
             font-weight: 500px;
-            border: 2px solid $naranja;
-            border-radius: 5rem;
+            
+            
             transition: 0.3s;
             cursor: pointer;
             &:hover{
-                background-color: $naranja;
-                color:$amarillo;
-                border: 2px solid $naranja;
+                background-color: $amarillo;
+                color: white;
+                border: 2px solid $amarillo;
             }
             &:active{
                 transform: scale(0.9);
@@ -279,7 +382,6 @@ table, th, td {
         }
 
         table, th, td {
-  border: 2px solid black;
   border-collapse: collapse;
   padding: 10px;
         }
@@ -290,8 +392,8 @@ table, th, td {
 
             width: 100%;
             min-width: 100dvh;
-            background-color: black;
-            backdrop-filter: blur (10px);
+            background-color:rgba(0, 0, 0, 0.4);
+            // backdrop-filter: blur (10px);
 
             display: none; /* esto cambiaremos desde JS  */
             flex-direction: row;
@@ -299,8 +401,8 @@ table, th, td {
             align-items: center;
         }
         .resume{
-            background-color: rgb(95, 95, 95);
-            color: white;
+            background-color: $amarillo;
+            color: black;
             padding: 3rem;
             border-radius: 1rem;
             display: flex;
@@ -320,12 +422,16 @@ table, th, td {
         }
 
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 
   // TIPOGRAFIAS
 .encabezado-h1{
    font-size: 5em;
 }
+.encabezado-h2 {
+    font-size: 3em;
+}
+
 .encabezado-h3 {
     font-size: 2em;
 }
@@ -333,7 +439,16 @@ table, th, td {
     font-size: 4em;
 }
 
-
+#modal form {
+    width: 60%;
+  }
+.resume {
+    width: 60%;
+    border-radius: 1rem;
+  }
+#tablapedidos {
+    width: 50%;
+  }
 
 }
 
