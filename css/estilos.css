@@ -136,6 +136,15 @@
   height: 50vh;
 }
 
+.img-slider3 {
+  background-image: url(../img/slider-sobre-nosotros.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  max-width: 1920px;
+  height: 50vh;
+}
+
 .titulo-index {
   font-family: "Anton", sans-serif;
   font-size: 12em;
@@ -143,7 +152,7 @@
 
 .encabezado-h1 {
   font-family: "Anton", sans-serif;
-  font-size: 4em;
+  font-size: 6em;
 }
 
 .encabezado-h2 {
@@ -343,8 +352,11 @@ table, th, td {
 }
 
 @media (max-width: 600px) {
+  .titulo-index {
+    font-size: 4em;
+  }
   .encabezado-h1 {
-    font-size: 5em;
+    font-size: 4em;
   }
   .encabezado-h2 {
     font-size: 3em;

@@ -201,7 +201,15 @@ $tipotxt:"DM Sans", sans-serif;
   background-position: center;
   max-width: 1920px;
   height: 50vh;
-   
+}
+
+.img-slider3{
+  background-image: url(../img/slider-sobre-nosotros.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  max-width: 1920px;
+  height: 50vh;
 }
 // TIPOGRAFIAS
 
@@ -212,7 +220,7 @@ $tipotxt:"DM Sans", sans-serif;
 
 .encabezado-h1{
    font-family: "Anton", sans-serif;
-   font-size: 4em;
+   font-size: 6em;
 }
 .encabezado-h2{
   font-family: "Anton", sans-serif;
@@ -425,8 +433,11 @@ table, th, td {
 @media (max-width: 600px) {
 
   // TIPOGRAFIAS
+.titulo-index{
+    font-size: 4em;
+  }
 .encabezado-h1{
-   font-size: 5em;
+   font-size: 4em;
 }
 .encabezado-h2 {
     font-size: 3em;
