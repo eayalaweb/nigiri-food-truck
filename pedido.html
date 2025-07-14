@@ -51,21 +51,24 @@
 </nav>
 
 <!-------------HERO----------------->
-<section class="container-w90 g-0  pt-5 hero-pedidos">
-    <h1 class="titulo-h1">NUESTRA CARTA</h1>
+ <section class="container-w90 pt-nav pb-5">
+    <div class="row m-auto">
+        <div class="col-md-8">
+            <h1 class="titulo-index text-black">NUESTRA CARTA</h1>
+            <h2 class="encabezado-h2 text-rojo">Haz tu pedido de sushi de forma simple y rápida a través de nuestra plataforma online.</h2>
+            <p class="texto2">Nosotros lo preparamos al momento con ingredientes frescos y lo dejamos listo para que puedas retirarlo directamente en nuestra food truck, sin demoras ni filas innecesarias.</p>
+            <button type="button" class="btn-body mb-3">CONTACTA CON NOSOTROS</button>
 
-   <div class="row">
-    <div class="col-md-6">
-            <h4>Haz tu pedido de sushi de forma simple y rápida a través de nuestra plataforma online.</h4>
-            <p>Nosotros lo preparamos al momento con ingredientes frescos y lo dejamos listo para que puedas retirarlo directamente en nuestra food truck, sin demoras ni filas innecesarias.</p>
-             <button type="button" class="btn btn-dark">contacto</button>
         </div>
 
-       
+        <div class="col-md-4">
+            <img src="img/pedido-hero.png" class="img-fluid" alt="Food Truck">
+
+        </div>
 
     </div>
 
-</section>
+ </section>
 
 <!-- MENU- CHEKS BOX -->
 <section class="container-w90 ">
@@ -381,7 +384,7 @@
 <!-- RESUMEN DE TU PEDIDO -->
 <section class="container-fluid bg-rojo pt-5 pb-5">
       <article class="resumen" >
-        <div class="align-items-center justify-content-center bg-color-tema p-5 m-auto w-50">
+        <div class="align-items-center justify-content-center bg-color-tema p-5 m-auto">
                 <h3 class="text-center encabezado-h3">TU PEDIDO ESTÁ LISTO</h3>
                 <table id="tablaPedidos">
                     <thead class="titulo-tabla" >
@@ -412,11 +415,12 @@
 
 <!-- ************************************************************ -->
 <!-- CONFIRMA TU PEDIDO - MODAL-->
-<section class="container g-0">
+<section class="container g-0 mt-5">
 
     <div id="modal">
         <article class="resume" id="contenedorModal">
-                  <span id="cerrar">X</span>
+                  <!-- <span id="cerrar">X</span> -->
+                  <img src="img/close.svg" width="30px" alt="cerrar" id="cerrar">
                   <h3 class="encabezado-h3">CONFIRMA TU PEDIDO</h3>
                   <!-- aqui ira la tabla clonada de forma dinamica desde JS-->
 
@@ -428,29 +432,31 @@
             <!-- <div class="boton" id="botonConfirmar">HACER EL PEDIDO</div> -->
 
               <form>
-                  <div  class="row">
-                          <div class="col-12 col-md-6">
-                                <label for="nom">Nombre</label>
-                                <input type="text" name="nom" id="nom">
-
-                                <label for="tel">Teléfono</label>
-                                <input type="tel" name="tel" id="tel">
-                          </div>
-                          <div class="col-12 col-md-6">
-                                <label for="dir">Dirección</label>
-                                <input type="text" name="dir" id="dir">
-                                
-                                <label for="coment">Comentarios</label>
-                                <textarea name="coment" id="coment"></textarea>
-
-                                <div class="terminos">
-                                    <label for="terminos">Aceptar términos y condiciones de política de privacidad</label>
-                                    <input type="checkbox" name="terminos" id="terminos">                            
-                                </div>
-                                <input type="submit" value="Finalizar y Pagar" class="boton" id="terminos">
-                          </div>  
-                      </div>    
-                  </form>
+                    <div class="row mb-3">
+                    <div class="col-md-6">
+                    <label for="nombre" class="form-label">Nombre y Apellido</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre y apellido">
+                    </div>
+                    <div class="col-md-6">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control" id="telefono" placeholder="Número de teléfono">
+                    </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                    <label for="email" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com">
+                    </div>
+                    <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" placeholder="Calle, número, ciudad">
+                    </div>
+                    <div class="mb-3">
+                    <label for="coment"  class="form-label">Comentarios</label>
+                    <textarea name="coment" id="coment" class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
                   
         </article>
     </div>
@@ -539,7 +545,7 @@ for(const producto of productos){
             // asigno valores
             // EM: Aqui a cada TD le asignamos un constante que hace el evento mediante la data
             tr.setAttribute("id", id)
-             tr.setAttribute("class", "fila")
+            tr.setAttribute("class", "fila")
             td1.innerText = "#"
             td2.innerText = nombre
             td3.innerText = precio + "€"
@@ -587,7 +593,7 @@ const modal = document.getElementById("modal")
 
 const contenedorModal = document.getElementById("contenedorModal") 
 const tablaPedidos = document.getElementById("tablaPedidos")
-const totalFinal = document.getElementById("totalFinal")
+const totalCompra = document.getElementById("totalCompra")
 
 
 
@@ -602,8 +608,10 @@ botonPagar.addEventListener("click", function(){
     //Comprobamos si hay tabla y si la hay la quito
 
     const tablaAnterior = contenedorModal.querySelector('table')
+    const totalCompraAnterior = contenedorModal.querySelector('#totalCompra')
     if(tablaAnterior){
         tablaAnterior.remove()
+        totalCompraAnterior.remove()
      
     }
     contenedorModal.insertBefore(tablaPedidosClonada, contenedorModal.children[2])
@@ -659,12 +667,12 @@ cerrar.addEventListener("click", function(){
 
                   <div class="col-6">
                       <h5 class="info-footer">INFORMACIÓN</h5>
-                      <a href="#" class="footer-link"> Inicio </a> <br> 
-                      <a href="#" class="footer-link"> Sobre nosotros </a> <br>
-                      <a href="#" class="footer-link"> Personalizar </a> <br>
-                      <a href="#" class="footer-link"> Encontrar </a> <br>
-                      <a href="#" class="footer-link"> Contacto </a> <br>
-                      <a href="#" class="footer-link"> Pedidos </a> <br>
+                      <a href="index.html" class="footer-link"> Inicio </a> <br> 
+                      <a href="quienes-somos.html" class="footer-link"> Sobre nosotros </a> <br>
+                      <a href="personaliza.html" class="footer-link"> Personalizar </a> <br>
+                      <a href="encuentranos.html" class="footer-link"> Encontrar </a> <br>
+                      <a href="contacto.html" class="footer-link"> Contacto </a> <br>
+                      <a href="pedido.html" class="footer-link"> Pedidos </a> <br>
 
 
                   </div>
