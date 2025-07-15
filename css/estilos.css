@@ -394,7 +394,7 @@ form {
 
 @media (max-width: 600px) {
   .titulo-index {
-    font-size: 2em;
+    font-size: 3em;
   }
   .encabezado-h1 {
     font-size: 4em;
@@ -409,7 +409,7 @@ form {
     font-size: 1em;
   }
   .footer-h5 {
-    font-size: 4em;
+    font-size: 3em;
   }
   #modal form {
     width: 60%;
@@ -429,6 +429,9 @@ form {
   .btn-mio {
     padding: 1rem;
     font-size: 15px;
+  }
+  .micontainer {
+    padding: 20px;
   }
 }
 @media only screen and (min-width: 800px) {
